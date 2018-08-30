@@ -75,7 +75,67 @@ class OXTest {
         assertNull(ox.get(-1, 3));
 
     }
-    
+    @Test
+    void  checkWinCol0(){
+        OX ox = new OX();
+        ox.put(0,0);
+        ox.put(0,1);
+        ox.put(0,2);
+        assertTrue(ox.checkWin(0,0));
+        assertTrue(ox.checkWin(0,1));
+        assertTrue(ox.checkWin(0,2));
+        assertFalse(ox.checkWin(1,0));
+        assertFalse(ox.checkWin(1,1));
+        assertFalse(ox.checkWin(1,2));
+    }
+    @Test
+    void  checkWinCol2(){
+        OX ox = new OX();
+        ox.put(2,0);
+        ox.put(2,1);
+        ox.put(2,2);
+        assertTrue(ox.checkWin(2,0));
+        assertTrue(ox.checkWin(2,1));
+        assertTrue(ox.checkWin(2,2));
+        assertFalse(ox.checkWin(1,0));
+        assertFalse(ox.checkWin(1,1));
+        assertFalse(ox.checkWin(1,2));
+    }
+    @Test
+    void  checkWinRow2(){
+        OX ox = new OX();
+        ox.put(0,2);
+        ox.put(1,2);
+        ox.put(2,2);
+        assertTrue(ox.checkWin(0,2));
+        assertTrue(ox.checkWin(1,2));
+        assertTrue(ox.checkWin(2,2));
+        assertFalse(ox.checkWin(1,0));
+        assertFalse(ox.checkWin(1,1));
+        assertFalse(ox.checkWin(1,1));
+    }
+    @Test
+    void  checkWinES(){
+        OX ox = new OX();
+        ox.put(0,0);
+        ox.put(1,1);
+        ox.put(2,2);
+        assertTrue(ox.checkWin(0,0));
+        assertTrue(ox.checkWin(1,1));
+        assertTrue(ox.checkWin(2,2));
+
+    }
+    @Test
+    void  checkWinSS(){
+        OX ox = new OX();
+        ox.put(2,0);
+        ox.put(1,1);
+        ox.put(0,2);
+        assertTrue(ox.checkWin(2,0));
+        assertTrue(ox.checkWin(1,1));
+        assertTrue(ox.checkWin(0,2));
+
+    }
     @Test
     void reset(){
         OX ox = new OX();
